@@ -1,0 +1,11 @@
+Water Valve:
+Components:
+1.	Arduino Uno/Nano
+2.	NRF24l01+ Radio Transceiver Module
+3.	PA/LNA Antenna for Radio transmission (Optional: if communication distance > 80 meters)
+4.	Nominal ½” Solenoid Water Valve
+5.	Relay Module for Arduino
+6.	1n4007 Diode
+7.	A D.C. Adapter (Specs determined by the requirement of Valve)
+Working:
+The watering of the plants can either be done based upon time intervals set by the user or the readings of the field sensors. For sensor-triggered watering a threshold is determined which when reached triggers the watering process. For this, the readings are received from the hub via NRF24l01+ module and are fed as input to the arduino microcontroller. The arduino compares the values with threshold. If threshold value is crossed, the arduino turns on the relay module. The relay module acts as a switch in between the DC source and the Water Valve. A 1N4007 diode (used as a snubber diode) is connected across the valve because the solenoid valve is an inductive load. Therefore, with the rapid change in current (when the source is disconnected), a voltage spike occurs across it which is dealt by the diode by letting the discharging current pass through it until it becomes zero thus resulting in safe closing of valve.
