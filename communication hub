@@ -1,0 +1,10 @@
+Communication Hub
+
+Components:
+1.	Arduino Uno/Nano
+2.	NRF2l01+ Radio Transceiver Module
+3.	PA/LNA Antenna for Radio transmission (Optional: if communication distance > 80 meters)
+4.	ESP-8266 Wi-Fi Module
+
+Working:
+The probes attached at various points in the field are all configured to send the sensors’ data to a central communication hub which is also situated in the field. The short distance and absence of obstacles between the probes and the hub is the reason to use radio frequency for communication as it is a faster way to communicate where distance and obstacles are not a problem. An additional Power Amplifier/Low Noise Amplifier antenna is used with the NRF24l01+ radio transceiver module if the distance between the probe and hub is greater than 80 meters. It receives radio signals of the probes and gives it as input to Arduino microcontroller. This received data is then sent to a server (A locally hosted server in our case. However, the server can be made live by purchasing a domain) by means of an ESP-8266 Wi-Fi Module and consequently each probes’ sensor data reaches the database of our server.
