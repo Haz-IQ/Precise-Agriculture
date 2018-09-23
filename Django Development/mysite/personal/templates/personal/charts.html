@@ -1,0 +1,17 @@
+{% extends 'personal/header.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class='row'>
+    <div class='col-sm-10' url-endpoint = '{%url "api-data"%}' >
+		<script src="{% static "personal/js/ch.js" %}"></script>
+		<h1>Hello World</h1>
+		<div  style="position:absolute; top:50px; left:50px;">	
+			<canvas id="myChart" width= "400px" height= "400px" ></canvas>
+
+
+    </div>
+</div>
+
+{% endblock content %}
